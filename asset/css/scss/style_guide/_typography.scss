@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('scss/style_guide/fonts/OpenSans-Light-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sanslight_italic';
+    src: url('scss/style_guide/fonts/OpenSans-LightItalic-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-LightItalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('scss/style_guide/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('scss/style_guide/fonts/OpenSans-Italic-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-Italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('scss/style_guide/fonts/OpenSans-Semibold-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-Semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'open_sanssemibold_italic';
+    src: url('scss/style_guide/fonts/OpenSans-SemiboldItalic-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('scss/style_guide/fonts/OpenSans-Bold-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansbold_italic';
+    src: url('scss/style_guide/fonts/OpenSans-BoldItalic-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-BoldItalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sansextrabold';
+    src: url('scss/style_guide/fonts/OpenSans-ExtraBold-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-ExtraBold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'open_sansextrabold_italic';
+    src: url('scss/style_guide/fonts/OpenSans-ExtraBoldItalic-webfont.woff2') format('woff2'),
+         url('scss/style_guide/fonts/OpenSans-ExtraBoldItalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+$OpenSans_Light: 'open_sanslight';
+$OpenSans-Light-Italic: 'open_sanslight_italic';
+$OpenSans-Regular: 'open_sansregular';
+$OpenSans-Italic: 'open_sansitalic';
+$OpenSans-Semibold: 'open_sanssemibold';
+$OpenSans-Semibold-Italic: 'open_sanssemibold_italic';
+$OpenSans-Bold: 'open_sansbold';
+$OpenSans-Bold-Italic: 'open_sansbold_italic';
+$OpenSans-ExtraBold: 'open_sansextrabold';
+$OpenSans_ExtraBold-Italic: 'open_sansextrabold_italic';
+
+.section{
+    &_title{
+        h2{
+            font-size: $base8;
+            line-height: $base9;
+            font-family: $OpenSans-Bold;
+            margin-bottom: $base4;
+        }
+        h3{
+            font-size: $base5;
+            line-height: $base6;
+            font-family: $OpenSans-Bold;
+            margin-bottom: $base1;
+        }
+        h4{
+            font-size: $base4;
+            line-height: $base5;
+        }
+        h5{
+            font-size: $base3;
+            line-height: $base4;
+        }
+    }   
+}
+.title{
+    &_section{
+        h2{
+
+        }
+        h3{
+
+        }
+    }
+    &_sub-section{
+        height: 42px;
+        position: relative;
+        font-family: $OpenSans-Semibold;
+        font-size: 16px;
+        line-height: 30px;
+        text-transform: capitalize;
+        color:$color_black;
+    }
+}

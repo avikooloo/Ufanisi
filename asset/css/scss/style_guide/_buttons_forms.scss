@@ -1,0 +1,24 @@
+.btn{
+    &_snippet{
+        font-family: $OpenSans-Semibold;
+        transition: all .35s ease-out;
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: capitalize;
+        color:$color_blue;
+        padding-top: $base1;
+        padding-right: $base4;
+        display: block;
+        position: relative;
+        float: left;
+        &:hover{
+            color: $color_blue-dark;
+        }
+        .icon-right-arrow{
+            position: absolute;
+            font-size: 18px;
+            bottom: 3px;
+            right: 0;
+        }
+    }
+}

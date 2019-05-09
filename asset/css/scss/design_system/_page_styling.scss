@@ -1,0 +1,170 @@
+body,html{
+    font-family: $OpenSans-Regular; color: $color_grey-darkest; font-size: 14px; line-height: 24px;
+}
+@font-face {
+font-family: 'icomoon';
+src:  url('scss/design_system/fonts/icomoon.eot?vtrvg9');
+src:  url('scss/design_system/fonts/icomoon.eot?vtrvg9#iefix') format('embedded-opentype'),
+    url('scss/design_system/fonts/icomoon.ttf?vtrvg9') format('truetype'),
+    url('scss/design_system/fonts/icomoon.woff?vtrvg9') format('woff'),
+    url('scss/design_system/fonts/icomoon.svg?vtrvg9#icomoon') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+/* use !important to prevent issues with browser extensions that change fonts */
+font-family: 'icomoon' !important;
+speak: none;
+font-style: normal;
+font-weight: normal;
+font-variant: normal;
+text-transform: none;
+line-height: 1;
+
+/* Better Font Rendering =========== */
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+content: "\e900";
+}
+.icon-right-arrow:before {
+content: "\e901";
+}
+.icon-settings:before {
+content: "\e902";
+}
+.icon-style_guide:before {
+content: "\e903";
+}
+.icon-component_library:before {
+content: "\e904";
+}
+.icon-design_system:before {
+content: "\e905";
+}
+.landing_page{
+    background:#000c20;
+}
+.hero{
+    &_section{
+        background: $color_white;
+        padding-top: $base8;
+        padding-left:$base5;
+        padding-right: $base5;
+        &-wrapper{
+            padding: 0 $base24;
+            display: flex;
+            li{
+                width: 50%;
+                overflow: hidden;
+            }
+        }
+        &-snippet{
+            margin-right: $base17;
+            text-align: center;
+            color: #000c20;
+            h1{
+                font-size: $base4;
+                line-height: $base6;
+                font-family: $OpenSans-Bold;
+                margin-bottom: $base4;
+            }
+            h2{
+                font-size: $base3;
+                line-height: $base5;
+                font-family: $OpenSans-Regular;
+                margin-bottom: $base1;
+            }
+        }
+        &-img{
+            overflow: hidden;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+.page_logo{
+    width: 180px;
+    margin:$base6 auto;
+    img{
+        width: 100%;
+    }
+}
+.snippet{
+    border: 1px solid #e5e6e9;
+    border-radius:4px;
+    min-height: 180px;
+    overflow: hidden;
+    position: relative;
+    padding:$base6 $base5;
+    &_section{
+        background: $color_white;
+    }
+    &_wrapper{
+        display: flex;
+        overflow: hidden;
+        margin: 0 -12px;
+        li{
+            width: 33.3%;
+            padding: 0 $base2;
+        }
+    }
+}
+.title_sub-section{
+    padding-left: 36px;
+    .icons{
+        position: absolute;
+        top:0;
+        left: 0;
+        font-size: 28px;
+    }
+}
+.section_wrapper{
+    padding: $base19 0;
+    overflow: hidden;
+    position: relative;
+}
+.footer{
+    &_section{
+        position: relative;
+        .section_title{
+            color: $color_white;
+            margin-bottom: 30px;
+        }
+    }
+    &_links{
+        display: flex;
+        margin-right:-$base2;
+        margin-left:-$base2;
+        margin-bottom: $base3;
+        overflow: hidden;
+        li{
+            width: 16.6%;
+            padding: 0 $base2;
+        }
+        a{
+            background-color:#0f192c;
+            display: block;
+            overflow: hidden;
+            border-radius: 4px;
+            padding-top: $base3;
+            padding-bottom: $base3;
+            margin-bottom: $base1;
+            img{
+                display: block;
+                height: 50px;
+                margin: auto;
+            }
+        }
+    }
+    &_bottom{
+        border-top: solid 1px #0f192c;
+        padding: $base3;
+        text-align: center;
+    }
+}

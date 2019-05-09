@@ -1,0 +1,221 @@
+$breakpoints: (
+    phone-small:  300px,
+    phone:        400px,
+    phone-wide:   480px,
+    phablet:      560px,
+    tablet-small: 640px,
+    tablet:       768px,
+    tablet-wide:  1024px,
+    desktop:      1248px,
+    desktop-wide: 1440px
+);
+@mixin mq-min($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+@mixin mq-max($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @if $type == max {
+          $width: $width - 1px;
+      }
+      @media only screen and (#{$type}-width: $width) {
+          @content;
+      }
+  }
+}
+@mixin respond-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+@mixin no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@mixin btn-theme($btn-border-color,$btn-color,$btn-text-color) {
+    border-color:$btn-border-color;
+    background-color: $btn-color;
+    color: $btn-text-color;
+    &:hover,&:focus{
+        background-color: darken($btn-color, 20%);
+        border-color: darken($btn-color, 30%);
+        color: $btn-text-color;
+    }
+    &:active {
+        background-color: darken($btn-color, 30%);
+        border-color: darken($btn-color, 30%);
+        color: $btn-text-color;
+    }
+    &:visited {
+        border-color:$btn-border-color;
+        background-color: $btn-color;
+        color: $btn-text-color;
+    }
+}
+  @mixin transition($properties) {
+    -webkit-transition: $properties;
+    -moz-transition: $properties;
+    -ms-transition: $properties;
+    -o-transition: $properties;
+    transition: $properties;
+  }
+  @mixin transform($properties){
+    -moz-transform: $properties;
+    -webkit-transform: $properties;
+    -o-transform: $properties;
+    -ms-transform: $properties;
+    transform: $properties;
+  }
+  @mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+  }
+  @mixin no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  @mixin opacity($trans) {
+    filter: alpha(opactiy=($trans * 100));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+    -moz-opacity: $trans;
+    -khtml-opacity: $trans;
+    opacity: $trans;
+  }
+  /// Select all children from the first to **n**
+  @mixin first($num) {
+    &:nth-child(n + #{$num}) {
+      @content;
+    }
+  }
+  /// Select all children from the last to **n**
+  @mixin last($num) {
+     &:nth-last-child(-n + #{$num}) {
+      @content;
+    }
+  }
+  /// Select the first exact child
+  @mixin first-child() {
+    &:first-of-type {
+      @content;
+    }
+  }
+  /// Select the last exact child
+  @mixin last-child() {
+    &:last-of-type {
+      @content;
+    }
+  }
+  /// Select all even children.
+  @mixin even() {
+    &:nth-child(even) {
+      @content;
+    }
+  }
+  /// Select all odd children
+  @mixin odd() {
+    &:nth-child(odd) {
+      @content;
+    }
+  }
+  /// Select children each `$num`.
+@mixin each($num) {
+  &:nth-child(#{$num}n) {
+    @content;
+  }
+}
+/// Select all `$num` children between `$first` and `$last`.
+@mixin n-between($num, $first, $last) {
+  &:nth-child(#{$num}n):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+    @content;
+  }
+}
+  /// Select all children before `$num` from the last
+  @mixin from-end($num) {
+    &:nth-last-child(#{$num}) {
+      @content;
+    }
+  }
+  
+  /// Select all children between the `$num` first and the `$num` last.
+  @mixin all-but-first-last($num) {
+    &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {
+      @content;
+    }
+  }
+  
+  /// Select all children after the first to `$num`.
+  @mixin after-first($num) {
+    &:nth-child(n + #{$num + 1}) {
+      @content;
+    }
+  }
+  
+  /// Select all children between `$first` and `$last`.
+  @mixin between($first, $last) {
+    &:nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+      @content;
+    }
+  }
+
+
+/// Select all even children between `$first` and `$last`.
+@mixin even-between($first, $last) {
+  &:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+    @content;
+  }
+}
+
+/// Select all odd children between `$first` and `$last`.
+@mixin odd-between($first, $last) {
+  &:nth-child(odd):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+    @content;
+  }
+}
+/// Select all children but `$num`.
+@mixin all-but($num) {
+  &:not(:nth-child(#{$num})) {
+    @content;
+  }
+}
+  
+  @mixin background-opacity($color, $opacity: 0.3) {
+      background: $color; /* The Fallback */
+      background: rgba($color, $opacity);
+  }
+  
+  @mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+  }

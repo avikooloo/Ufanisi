@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+$base0:3px;
+$base1:6px;
+$base2:12px;
+$base3:18px;
+$base4:24px;
+$base5:30px;
+$base6:36px;
+$base7:42px;
+$base8:48px;
+$base9:54px;
+$base10:60px;
+$base11:66px;
+$base12:72px;
+$base13:78px;
+$base14:84px;
+$base15:90px;
+$base16:96px;
+$base17:102px;
+$base18:108px;
+$base19:114px;
+$base20:120px;
+$base21:126px;
+$base22:132px;
+$base23:138px;
+$base24:144px;
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: $base2;
+    padding-right: $base2;
+    @include mq-min(desktop){
+        width: 1300px;
+    }
+}
